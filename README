@@ -24,6 +24,10 @@ Features
   * Drag and Drop
   * Printing
 
+Added by Samy Badjoudj :
+
+  * duplicate line like intellij with CtR+D
+
 
 Installation
 ============
@@ -67,3 +71,4 @@ Ctrl-T                          Always on Top
 Ctrl-Tab                        toggle tab width
 Tab with selection bound        multi-line indent
 Shift-Tab with selection bound  multi-line unindent
+Ctrl-D                          Duplicate line

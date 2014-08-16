@@ -82,6 +82,11 @@ static GtkItemFactoryEntry menu_items[] =
 		NULL, 0, "<Separator>" },
 	{ N_("/Edit/Select _All"), "<control>A",
 		G_CALLBACK(on_edit_select_all), 0 },
+        { "/Edit/---", NULL,
+		NULL, 0, "<Separator>" },
+        { N_("/Edit/D_uplicate Line"), "<control>D",
+		G_CALLBACK(on_duplicate_line), 0 },
+	
 	{ N_("/_Search"),	 NULL,
 		NULL, 0, "<Branch>" },
 	{ N_("/Search/_Find..."), "<control>F",

@@ -45,6 +45,8 @@ void on_search_find_previous(void);
 void on_search_replace(void);
 void on_search_jump_to(void);
 void on_option_font(void);
+void on_duplicate_line(void);
+
 void on_option_word_wrap(void);
 void on_option_line_numbers(void);
 void on_option_always_on_top(void);
