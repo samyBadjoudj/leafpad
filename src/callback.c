@@ -137,7 +137,7 @@ void on_file_reopen (void) //reopen the current file with a more advanced editor
 		return;
 
 	command = g_strdup_printf ("%s %s", advanced_editor, pub->fi->filename);
-
+ 
 	if (!g_spawn_command_line_async (command, &error))
 	{
 		g_printerr ("leafpad> ERROR *** Could not launch advanced editor\n");
@@ -299,6 +299,12 @@ void on_option_font(void)
 	change_text_font_by_selector(pub->mw->view);
 }
 
+void on_duplicate_line(void)
+{
+        duplicate_line(pub->mw->view);
+     
+}
+
 void on_option_word_wrap(void)
 {
 	GtkItemFactory *ifactory;
@@ -347,9 +353,10 @@ void on_help_about(void)
 {
 	const gchar *copyright = "Copyright \xc2\xa9 2004-2010 Tarot Osuji";
 	const gchar *comments = _("GTK+ based simple text editor"
-							  "\nmodified by oluc");
+							  "\nmodified by oluc and Samy Badjoudj");
 	const gchar *authors[] = {
 		"Tarot Osuji <tarot@sdf.lonestar.org>",
+		"Samy Badjoudj <noemail@noemail.com>",
 		NULL
 	};
 	const gchar *translator_credits = _("translator-credits");

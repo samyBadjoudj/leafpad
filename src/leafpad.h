@@ -32,7 +32,7 @@
 #		define ENABLE_PRINT
 #	endif
 #endif
-
+#include "edittextfeatures.h"
 #include "window.h"
 #include "menu.h"
 #include "callback.h"

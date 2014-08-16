@@ -1,12 +1,14 @@
 bin_PROGRAMS = leafpad
 
-INCLUDES = -DICONDIR=\"$(datadir)/pixmaps\"
+INCLUDES = -DICONDIR=\"$(datadir)/pixmaps\" \
+	-Icharset-detector/include
 
 leafpad_SOURCES = \
 	leafpad.h main.c \
 	window.h window.c \
 	menu.h menu.c \
 	callback.h callback.c \
+	edittextfeatures.h edittextfeatures.c \
 	view.h view.c \
 	undo.h undo.c \
 	font.h font.c \
@@ -27,5 +29,8 @@ leafpad_SOURCES = \
 	gtksourceiter.h gtksourceiter.c \
 	i18n.h
 
-leafpad_CFLAGS  = $(GTK_CFLAGS) $(GNOMEPRINT_CFLAGS)
-leafpad_LDADD   = $(GTK_LIBS) $(INTLLIBS) $(GNOMEPRINT_LIBS)
+leafpad_CFLAGS  = $(GTK_CFLAGS) $(GNOMEPRINT_CFLAGS) $(HILDON_CFLAGS)
+leafpad_LDADD   = $(GTK_LIBS) $(INTLLIBS) $(GNOMEPRINT_LIBS) $(HILDON_LIBS) \
+	charset-detector/src/libchardetect.a -lstdc++
+
+SUBDIRS = charset-detector
