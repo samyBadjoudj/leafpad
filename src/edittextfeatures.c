@@ -45,4 +45,5 @@ duplicate_line (GtkWidget *textview)
   gtk_text_buffer_place_cursor (textbuffer, &end);
   g_free(line); 
 
+
 }
